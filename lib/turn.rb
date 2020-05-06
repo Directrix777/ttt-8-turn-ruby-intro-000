@@ -32,10 +32,10 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  num = gets.strip
-  until valid_move?(board, input_to_index(num))
+  num = input_to_index(gets.strip)
+  until valid_move?(board, num)
     puts "Please enter 1-9:"
     num = gets.strip
   end
-  move(board, input_to_index(num))
+  move(board, num)
 end
