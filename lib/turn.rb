@@ -31,12 +31,11 @@ def position_taken?(board, index)
 end
 
 def turn(board)
-  {
+  puts "Please enter 1-9:"
+  num = gets.strip
+  until valid_move?(board, input_to_index(num))
     puts "Please enter 1-9:"
     num = gets.strip
-    until valid_move?(board, input_to_index(num))
-      puts "Please enter 1-9:"
-      num = gets.strip
-    end
-    move(board, input_to_index(num))
-  }
+  end
+  move(board, input_to_index(num))
+end
